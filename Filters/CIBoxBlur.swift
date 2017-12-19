@@ -1,4 +1,4 @@
-//
+//  https://developer.apple.com/library/content/documentation/GraphicsImaging/Reference/CoreImageFilterReference/index.html#//apple_ref/doc/uid/TP30000136-SW29
 //  CIBoxBlur.swift
 //  Filters
 //
@@ -15,19 +15,23 @@ class CIBoxBlur: BaseFilter {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSliderViews()
+        self.setupViews()
         self.setupDescription()
         self.setupImages()
     }
 
-    private func setupSliderViews() {
+    private func setupViews() {
         let slider = SliderView(title: "模糊度", min: 1, max: 100, value: 10)
         slider.delegate = self
         self.view.addSubview(slider)
     }
 
     private func setupDescription() {
-        self.descView.text = "滤镜：CIBoxBlur(均值模糊)\n系统：iOS9.0\n参数：kCIInputRadiusKey，默认10.0，最小1.0，最大100.0"
+        self.descView.text = """
+        滤镜：CIBoxBlur(均值模糊)
+        系统：iOS9.0
+        简介：Blurs an image using a box-shaped convolution kernel.
+        """
     }
 
     private func setupImages() {
@@ -42,7 +46,7 @@ class CIBoxBlur: BaseFilter {
 }
 
 extension CIBoxBlur: SliderViewDelegate {
-    func valueChanged(slider: UISlider) {
+    func didChangedValue(slider: UISlider) {
         let value = slider.value
         DispatchQueue.global().async {
             let output = self.image.filter(name: self.name, parameters: [kCIInputRadiusKey: NSNumber(value: value)])

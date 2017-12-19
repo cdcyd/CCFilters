@@ -1,17 +1,17 @@
 //
-//  CIMedianFilter.swift
+//  CISRGBToneCurveToLinear.swift
 //  Filters
 //
-//  Created by 佰道聚合 on 2017/11/21.
+//  Created by cyd on 2017/12/19.
 //  Copyright © 2017年 cyd. All rights reserved.
 //
 
 import UIKit
 
-class CIMedianFilter: BaseFilter {
+class CISRGBToneCurveToLinear: BaseFilter {
 
-    private let image = UIImage("ImageB")
-    private let name = "CIMedianFilter"
+    private let image = UIImage("ImageG")
+    private let name = "CISRGBToneCurveToLinear"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +21,9 @@ class CIMedianFilter: BaseFilter {
 
     private func setupDescription() {
         self.descView.text = """
-        滤镜：CIMedianFilter(中值模糊)，用于消除图像噪点
-        系统：iOS9.0
-        简介：Computes the median value for a group of neighboring pixels and replaces each pixel value with the median.
-        详情：The effect is to reduce noise.
+        滤镜：CISRGBToneCurveToLinear
+        系统：iOS7.0
+        简介：Maps color intensity from the sRGB color space to a linear gamma curve.
         """
     }
 

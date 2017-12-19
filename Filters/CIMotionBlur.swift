@@ -17,12 +17,12 @@ class CIMotionBlur: BaseFilter {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSliderViews()
+        self.setupViews()
         self.setupDescription()
         self.setupImages()
     }
 
-    private func setupSliderViews() {
+    private func setupViews() {
         let slider = SliderView(title: "模糊度", min: 0, max: 100, value: 20)
         slider.delegate = self
         slider.slider.tag = 100
@@ -36,7 +36,11 @@ class CIMotionBlur: BaseFilter {
     }
 
     private func setupDescription() {
-        self.descView.text = "滤镜：CIMotionBlur(运动模糊)，用于模拟相机移动拍摄时的扫尾效果\n系统：iOS8.3\n参数：kCIInputAngleKey，默认0.0，最小-π，最大π\n           kCIInputRadiusKey，默认20，最小0.0，最大100.0"
+        self.descView.text = """
+        滤镜：CIMotionBlur(运动模糊)，用于模拟相机移动拍摄时的扫尾效果
+        系统：iOS8.3
+        简介：Blurs an image to simulate the effect of using a camera that moves a specified angle and distance while capturing the image.
+        """
     }
 
     private func setupImages() {
@@ -51,7 +55,7 @@ class CIMotionBlur: BaseFilter {
 }
 
 extension CIMotionBlur: SliderViewDelegate {
-    func valueChanged(slider: UISlider) {
+    func didChangedValue(slider: UISlider) {
         if slider.tag == 100 {
             radius = NSNumber(value: slider.value)
         } else {

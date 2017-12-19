@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SliderViewDelegate: NSObjectProtocol {
-    func valueChanged(slider: UISlider) -> Swift.Void
+    func didChangedValue(slider: UISlider) -> Swift.Void
 }
 
 class SliderView: UIView {
@@ -25,9 +25,9 @@ class SliderView: UIView {
     
         let label = UILabel(frame: .zero)
         label.text = title
-        label.textColor = UIColor.gray
         label.font = UIFont.systemFont(ofSize: 14)
         label.sizeToFit()
+        label.frame.origin.x = 5
         self.addSubview(label)
         
         let slider = UISlider(frame: CGRect(x: label.frame.maxX+5, y: 0, width: 200, height: label.bounds.height))
@@ -46,16 +46,15 @@ class SliderView: UIView {
         self.addSubview(valueLabel)
         self.valueLabel = valueLabel
 
-        self.frame = CGRect(x: 0, y: 250, width: label.bounds.width + slider.bounds.width + valueLabel.bounds.width + 4, height: label.bounds.height)
+        self.frame = CGRect(x: 0, y: 250, width: valueLabel.frame.maxX + 4, height: label.bounds.height)
     }
     
     @objc private func valueChanged(slider:UISlider) {
         self.valueLabel.text = String.init(format: "%.2f", slider.value)
-        delegate?.valueChanged(slider: slider)
+        delegate?.didChangedValue(slider: slider)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }

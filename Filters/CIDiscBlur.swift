@@ -15,19 +15,23 @@ class CIDiscBlur: BaseFilter {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSliderViews()
+        self.setupViews()
         self.setupDescription()
         self.setupImages()
     }
 
-    private func setupSliderViews() {
+    private func setupViews() {
         let slider = SliderView(title: "模糊度", min: 0, max: 100, value: 8)
         slider.delegate = self
         self.view.addSubview(slider)
     }
 
     private func setupDescription() {
-        self.descView.text = "滤镜：CIDiscBlur(环形卷积模糊)\n系统：iOS9.0\n参数：kCIInputRadiusKey，默认8.0，最小0.0，最大100.0"
+        self.descView.text = """
+        滤镜：CIDiscBlur(环形卷积模糊)
+        系统：iOS9.0
+        简介：Blurs an image using a disc-shaped convolution kernel.
+        """
     }
 
     private func setupImages() {
@@ -42,7 +46,7 @@ class CIDiscBlur: BaseFilter {
 }
 
 extension CIDiscBlur: SliderViewDelegate {
-    func valueChanged(slider: UISlider) {
+    func didChangedValue(slider: UISlider) {
         let value = slider.value
         DispatchQueue.global().async {
             let output = self.image.filter(name: self.name, parameters: [kCIInputRadiusKey: NSNumber(value: value)])

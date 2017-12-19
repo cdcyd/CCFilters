@@ -12,43 +12,42 @@ class CIZoomBlur: BaseFilter {
 
     private let image = UIImage("ImageC")
     private let name = "CIZoomBlur"
-    private var centerX = CGFloat(150.0)
-    private var centerY = CGFloat(150.0)
+    private var center = CIVector(x: 150.0, y: 150.0)
     private var amount = NSNumber(value: 20.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSliderViews()
+        self.setupViews()
         self.setupDescription()
         self.setupImages()
     }
 
-    private func setupSliderViews() {
-        let slider = SliderView(title: "centerX", min: 0.0, max: 300.0, value: 150.0)
-        slider.delegate = self
-        slider.slider.tag = 100
-        self.view.addSubview(slider)
+    private func setupViews() {
+        let center = PointView(title: "中心点", X: 150.0, Y: 150.0)
+        center.delegate = self
+        self.view.addSubview(center)
 
-        let slider1 = SliderView(title: "centerY", min: 0.0, max: 300.0, value: 150.0)
-        slider1.delegate = self
-        slider1.slider.tag = 101
-        slider1.frame.origin.y = 300
-        self.view.addSubview(slider1)
-
-        let slider2 = SliderView(title: "模 糊 度", min: -200, max: 200, value: 20.0)
+        let slider2 = SliderView(title: "模糊度", min: -200, max: 200, value: 20.0)
         slider2.delegate = self
-        slider2.slider.tag = 102
-        slider2.frame.origin.y = 350
+        slider2.frame.origin.y = 300
         self.view.addSubview(slider2)
     }
 
     private func setupDescription() {
-        self.descView.text = "滤镜：CIZoomBlur(变焦模糊)\n系统：iOS8.3\n参数：kCIInputCenterKey，默认{150,150}\n           inputAmount，默认20.0，最小-200，最大200"
+        self.descView.text = """
+        滤镜：CIZoomBlur(变焦模糊)
+        系统：iOS8.3
+        简介：Simulates the effect of zooming the camera while capturing the image.
+        """
     }
 
     private func setupImages() {
         self.imageView1.image = image
-        self.imageView2.image = image.filter(name: name, parameters: [kCIInputCenterKey: CIVector(x: centerX, y: centerY), "inputAmount": amount])
+        self.imageView2.image = image.filter(name: name, parameters: [kCIInputCenterKey: center, "inputAmount": amount])
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,19 +57,27 @@ class CIZoomBlur: BaseFilter {
 }
 
 extension CIZoomBlur: SliderViewDelegate {
-    func valueChanged(slider: UISlider) {
-        if slider.tag == 100 {
-            centerX = CGFloat(slider.value)
-        } else if slider.tag == 101 {
-            centerY = CGFloat(slider.value)
-        } else {
-            amount  = NSNumber(value: slider.value)
-        }
+    func didChangedValue(slider: UISlider) {
+        amount = NSNumber(value: slider.value)
         DispatchQueue.global().async {
-            let output = self.image.filter(name: self.name, parameters: [kCIInputCenterKey: CIVector(x: self.centerX, y: self.centerY), "inputAmount": self.amount])
+            let output = self.image.filter(name: self.name, parameters: [kCIInputCenterKey: self.center, "inputAmount": self.amount])
             DispatchQueue.main.async {
                 self.imageView2.image = output
             }
         }
     }
 }
+
+extension CIZoomBlur: PointViewDelegate {
+    func didChangedValue(view: PointView, point: CIVector) {
+        center = point
+        DispatchQueue.global().async {
+            let output = self.image.filter(name: self.name, parameters: [kCIInputCenterKey: self.center, "inputAmount": self.amount])
+            DispatchQueue.main.async {
+                self.imageView2.image = output
+            }
+        }
+    }
+}
+
+

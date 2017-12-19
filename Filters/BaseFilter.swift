@@ -17,7 +17,7 @@ class BaseFilter: UIViewController {
     let imageView1 = UIImageView(frame: CGRect(x: 0, y: 0, width: screenW/2, height: 200))
     let imageView2 = UIImageView(frame: CGRect(x: screenW/2, y: 0, width: screenW/2, height: 200))
 
-    let descView = UITextView(frame: CGRect(x: 0, y: screenH-navigationH-200, width: screenW, height: 200-80))
+    let descView = UITextView(frame: CGRect(x: 0, y: screenH-navigationH-200, width: screenW, height: navigationH+200))
 
     override func viewDidLoad() {
         super.viewDidLoad()

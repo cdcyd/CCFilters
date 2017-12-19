@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         table.dataSource = self
         table.estimatedSectionFooterHeight = 0.0
         table.estimatedSectionHeaderHeight = 0.0
+        table.frame.size.height = UIScreen.main.bounds.height - UINavigationController().navigationBar.frame.height - UIApplication.shared.statusBarFrame.height
         return table
     }()
     
@@ -35,26 +36,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                  "CICategoryTransition"]
 
     private let dataSource = [["CIBoxBlur-均值模糊-" + NSStringFromClass(CIBoxBlur.self),
+                               "CIZoomBlur-变焦模糊-" + NSStringFromClass(CIZoomBlur.self),
+                               "CIMotionBlur-运动模糊-" + NSStringFromClass(CIMotionBlur.self),
                                "CIDiscBlur-环形卷积模糊-" + NSStringFromClass(CIDiscBlur.self),
                                "CIGaussianBlur-高斯模糊-" + NSStringFromClass(CIGaussianBlur.self),
-                               "CIMaskedVariableBlur-" + NSStringFromClass(CIMaskedVariableBlur.self),
                                "CIMedianFilter-中值模糊-" + NSStringFromClass(CIMedianFilter.self),
-                               "CIMotionBlur-运动模糊-" + NSStringFromClass(CIMotionBlur.self),
-                               "CINoiseReduction-" + NSStringFromClass(CINoiseReduction.self),
-                               "CIZoomBlur-变焦模糊-" + NSStringFromClass(CIZoomBlur.self)],
-                              ["CIColorClamp" + NSStringFromClass(CIColorClamp.self),
-                               "CIColorControls",
-                               "CIColorMatrix",
-                               "CIColorPolynomial",
-                               "CIExposureAdjust",
-                               "CIGammaAdjust",
-                               "CIHueAdjust",
-                               "CILinearToSRGBToneCurve",
-                               "CISRGBToneCurveToLinear",
-                               "CITemperatureAndTint",
-                               "CIToneCurve",
-                               "CIVibrance",
-                               "CIWhitePointAdjust"],
+                               "CIMaskedVariableBlur-" + NSStringFromClass(CIMaskedVariableBlur.self),
+                               "CINoiseReduction-" + NSStringFromClass(CINoiseReduction.self)],
+                              ["CIColorClamp-" + NSStringFromClass(CIColorClamp.self),
+                               "CIColorControls-" + NSStringFromClass(CIColorControls.self),
+                               "CIColorMatrix-" + NSStringFromClass(CIColorMatrix.self),
+                               "CIColorPolynomial-" + NSStringFromClass(CIColorPolynomial.self),
+                               "CIExposureAdjust-" + NSStringFromClass(CIExposureAdjust.self),
+                               "CIGammaAdjust-" + NSStringFromClass(CIGammaAdjust.self),
+                               "CIHueAdjust-" + NSStringFromClass(CIHueAdjust.self),
+                               "CILinearToSRGBToneCurve-" + NSStringFromClass(CILinearToSRGBToneCurve.self),
+                               "CISRGBToneCurveToLinear-" + NSStringFromClass(CISRGBToneCurveToLinear.self),
+                               "CITemperatureAndTint-" + NSStringFromClass(CITemperatureAndTint.self),
+                               "CIToneCurve-" + NSStringFromClass(CIToneCurve.self),
+                               "CIVibrance-" + NSStringFromClass(CIVibrance.self),
+                               "CIWhitePointAdjust-" + NSStringFromClass(CIWhitePointAdjust.self)],
                               ["CIColorCrossPolynomial",
                                "CIColorCube",
                                "CIColorCubeWithColorSpace",
@@ -255,7 +256,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.deselectRow(at: indexPath, animated: true)
         let title = dataSource[indexPath.section][indexPath.row].components(separatedBy: "-").first
         let className = dataSource[indexPath.section][indexPath.row].components(separatedBy: "-").last
-
         guard let clas = NSClassFromString(className!) as? UIViewController.Type else {
             return
         }

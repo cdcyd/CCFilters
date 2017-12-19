@@ -17,12 +17,12 @@ class CINoiseReduction: BaseFilter {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSliderViews()
+        self.setupViews()
         self.setupDescription()
         self.setupImages()
     }
 
-    private func setupSliderViews() {
+    private func setupViews() {
         let slider = SliderView(title: "噪音等级", min: 0.0, max: 0.1, value: 0.02)
         slider.delegate = self
         slider.slider.tag = 100
@@ -36,7 +36,12 @@ class CINoiseReduction: BaseFilter {
     }
 
     private func setupDescription() {
-        self.descView.text = "滤镜：CINoiseReduction，图片降噪\n系统：iOS9.0\n参数：kCIInputSharpnessKey，默认0.4，最小0.0，最大2.0\n           inputNoiseLevel，默认0.02，最小0.0，最大0.1"
+        self.descView.text = """
+        滤镜：CINoiseReduction，图片降噪
+        系统：iOS9.0
+        简介：Reduces noise using a threshold value to define what is considered noise.
+        详情：Small changes in luminance below that value are considered noise and get a noise reduction treatment, which is a local blur. Changes above the threshold value are considered edges, so they are sharpened.
+        """
     }
 
     private func setupImages() {
@@ -51,7 +56,7 @@ class CINoiseReduction: BaseFilter {
 }
 
 extension CINoiseReduction: SliderViewDelegate {
-    func valueChanged(slider: UISlider) {
+    func didChangedValue(slider: UISlider) {
         if slider.tag == 100 {
             noiseLevel = NSNumber(value: slider.value)
         } else {

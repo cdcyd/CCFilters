@@ -16,19 +16,24 @@ class CIMaskedVariableBlur: BaseFilter {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupSliderViews()
+        self.setupViews()
         self.setupDescription()
         self.setupImages()
     }
 
-    private func setupSliderViews() {
+    private func setupViews() {
         let slider = SliderView(title: "模糊度", min: 0, max: 10, value: 5)
         slider.delegate = self
         self.view.addSubview(slider)
     }
 
     private func setupDescription() {
-        self.descView.text = "滤镜：CIMaskedVariableBlur，提供和目标图像相同大小的灰度图像为它指定模糊半径，并且白色的区域模糊度最高，黑色区域则没有模糊\n系统：iOS8.0\n参数：inputMask，用于模糊的遮罩图片\n           inputRadius，默认5.0，最小0.0，最大10.0"
+        self.descView.text = """
+        滤镜：CIMaskedVariableBlur，提供和目标图像相同大小的灰度图像为它指定模糊半径，并且白色的区域模糊度最高，黑色区域则没有模糊
+        系统：iOS8.0
+        简介：Blurs the source image according to the brightness levels in a mask image.
+        详情：Shades of gray in the mask image vary the blur radius from zero (where the mask image is black) to the radius specified in the inputRadius parameter (where the mask image is white).
+        """
     }
 
     private func setupImages() {
@@ -43,7 +48,7 @@ class CIMaskedVariableBlur: BaseFilter {
 }
 
 extension CIMaskedVariableBlur: SliderViewDelegate {
-    func valueChanged(slider: UISlider) {
+    func didChangedValue(slider: UISlider) {
         let value = slider.value
         DispatchQueue.global().async {
             let output = self.image.filter(name: self.name, parameters: ["inputRadius": NSNumber(value: value), "inputMask": self.mask])
