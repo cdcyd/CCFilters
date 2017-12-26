@@ -25,25 +25,25 @@ class CIColorPolynomial: BaseFilter {
     }
 
     private func setupViews() {
-        let view1 = RGBAView(title: "R ", X: 0, Y: 1, Z: 0, W: 0)
+        let view1 = RGBAView(title: "R ", R: 0, G: 1, B: 0, A: 0)
         view1.tag = 100
         view1.frame.origin.y = 220
         view1.delegate = self
         self.view.addSubview(view1)
 
-        let view2 = RGBAView(title: "G ", X: 0, Y: 1, Z: 0, W: 0)
+        let view2 = RGBAView(title: "G ", R: 0, G: 1, B: 0, A: 0)
         view2.tag = 101
         view2.frame.origin.y = 260
         view2.delegate = self
         self.view.addSubview(view2)
 
-        let view3 = RGBAView(title: "B ", X: 0, Y: 1, Z: 0, W: 0)
+        let view3 = RGBAView(title: "B ", R: 0, G: 1, B: 0, A: 0)
         view3.tag = 102
         view3.frame.origin.y = 300
         view3.delegate = self
         self.view.addSubview(view3)
 
-        let view4 = RGBAView(title: "A ", X: 0, Y: 1, Z: 0, W: 0)
+        let view4 = RGBAView(title: "A ", R: 0, G: 1, B: 0, A: 0)
         view4.tag = 103
         view4.frame.origin.y = 340
         view4.delegate = self

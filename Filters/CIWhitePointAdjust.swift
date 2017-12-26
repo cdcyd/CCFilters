@@ -22,7 +22,7 @@ class CIWhitePointAdjust: BaseFilter {
     }
 
     private func setupViews() {
-        let view1 = RGBAView(title: "RGBA", X: 1.0, Y: 1.0, Z: 1.0, W: 1.0)
+        let view1 = RGBAView(title: "RGBA", R: 1.0, G: 1.0, B: 1.0, A: 1.0)
         view1.delegate = self
         self.view.addSubview(view1)
     }

@@ -23,12 +23,12 @@ class CIColorClamp: BaseFilter {
     }
 
     private func setupViews() {
-        let view1 = RGBAView(title: "Min", X: 0, Y: 0, Z: 0, W: 0)
+        let view1 = RGBAView(title: "Min", R: 0, G: 0, B: 0, A: 0)
         view1.tag = 100
         view1.delegate = self
         self.view.addSubview(view1)
 
-        let view2 = RGBAView(title: "Max", X: 1, Y: 1, Z: 1, W: 1)
+        let view2 = RGBAView(title: "Max", R: 1, G: 1, B: 1, A: 1)
         view2.tag = 101
         view2.frame.origin.y = 300
         view2.delegate = self
