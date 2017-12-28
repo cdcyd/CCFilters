@@ -23,12 +23,12 @@ class CINoiseReduction: BaseFilter {
     }
 
     private func setupViews() {
-        let slider = SliderView(title: "噪音等级", min: 0.0, max: 0.1, value: 0.02)
+        let slider = SliderView(title: "Noise", min: 0.0, max: 0.1, value: 0.02)
         slider.delegate = self
         slider.slider.tag = 100
         self.view.addSubview(slider)
 
-        let slider1 = SliderView(title: "锐        度", min: 0.0, max: 2.0, value: 0.40)
+        let slider1 = SliderView(title: "Sharp", min: 0.0, max: 2.0, value: 0.40)
         slider1.delegate = self
         slider1.slider.tag = 101
         slider1.frame.origin.y = 300
@@ -57,11 +57,7 @@ class CINoiseReduction: BaseFilter {
 
 extension CINoiseReduction: SliderViewDelegate {
     func didChangedValue(slider: UISlider) {
-        if slider.tag == 100 {
-            noiseLevel = NSNumber(value: slider.value)
-        } else {
-            sharpness = NSNumber(value: slider.value)
-        }
+        slider.tag == 100 ? (noiseLevel = NSNumber(value: slider.value)) : (sharpness = NSNumber(value: slider.value))
         DispatchQueue.global().async {
             let output = self.image.filter(name: self.name, parameters: [kCIInputSharpnessKey: self.sharpness, "inputNoiseLevel": self.noiseLevel])
             DispatchQueue.main.async {

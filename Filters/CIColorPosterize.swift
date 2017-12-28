@@ -1,17 +1,18 @@
 //
-//  CIGammaAdjust.swift
+//  CIColorPosterize.swift
 //  Filters
 //
-//  Created by cyd on 2017/12/19.
+//  Created by cyd on 2017/12/27.
 //  Copyright © 2017年 cyd. All rights reserved.
 //
 
 import UIKit
 
-class CIGammaAdjust: BaseFilter {
+class CIColorPosterize: BaseFilter {
 
     private let image = UIImage("ImageE")
-    private let name = "CIGammaAdjust"
+    private let name = "CIColorPosterize"
+    private var level = NSNumber(value: 6.0)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,23 +22,23 @@ class CIGammaAdjust: BaseFilter {
     }
 
     private func setupViews() {
-        let slider = SliderView(title: "PW", min: 0.25, max: 4, value: 1.0)
+        let slider = SliderView(title: "Level", min: 2.0, max: 30.0, value: 6.0)
         slider.delegate = self
         self.view.addSubview(slider)
     }
 
     private func setupDescription() {
         self.descView.text = """
-        滤镜：CIGammaAdjust
-        系统：iOS5.0
-        简介：Adjusts midtone brightness.
-        详情：This filter is typically used to compensate for nonlinear effects of displays. Adjusting the gamma effectively changes the slope of the transition between black and white.
+        滤镜：CIColorPosterize
+        系统：iOS6.0
+        简介：Remaps red, green, and blue color components to the number of brightness values you specify for each color component.
+        详情：This filter flattens colors to achieve a look similar to that of a silk-screened poster
         """
     }
 
     private func setupImages() {
         self.imageView1.image = image
-        self.imageView2.image = image.filter(name: name, parameters: ["inputPower": NSNumber(value: 1.0)])
+        self.imageView2.image = image.filter(name: name, parameters: ["inputLevels": level])
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,11 +47,11 @@ class CIGammaAdjust: BaseFilter {
     }
 }
 
-extension CIGammaAdjust: SliderViewDelegate {
+extension CIColorPosterize: SliderViewDelegate {
     func didChangedValue(slider: UISlider) {
-        let value = slider.value
+        level = NSNumber(value: slider.value)
         DispatchQueue.global().async {
-            let output = self.image.filter(name: self.name, parameters: ["inputPower": NSNumber(value: value)])
+            let output = self.image.filter(name: self.name, parameters: ["inputLevels": self.level])
             DispatchQueue.main.async {
                 self.imageView2.image = output
             }

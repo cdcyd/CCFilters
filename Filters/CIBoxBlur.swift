@@ -21,7 +21,7 @@ class CIBoxBlur: BaseFilter {
     }
 
     private func setupViews() {
-        let slider = SliderView(title: "模糊度", min: 1, max: 100, value: 10)
+        let slider = SliderView(title: "Radius", min: 1, max: 100, value: 10)
         slider.delegate = self
         self.view.addSubview(slider)
     }

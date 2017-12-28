@@ -23,12 +23,12 @@ class CIMotionBlur: BaseFilter {
     }
 
     private func setupViews() {
-        let slider = SliderView(title: "模糊度", min: 0, max: 100, value: 20)
+        let slider = SliderView(title: "Radius", min: 0, max: 100, value: 20)
         slider.delegate = self
         slider.slider.tag = 100
         self.view.addSubview(slider)
 
-        let slider1 = SliderView(title: "角    度", min: -Float.pi, max: Float.pi, value: 0.0)
+        let slider1 = SliderView(title: "Angle", min: -Float.pi, max: Float.pi, value: 0.0)
         slider1.delegate = self
         slider1.slider.tag = 101
         slider1.frame.origin.y = 300

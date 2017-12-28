@@ -48,10 +48,6 @@ class CIColorControls: BaseFilter {
         系统：iOS5.0
         简介：Adjusts saturation, brightness, and contrast values.
         详情：To calculate saturation, this filter linearly interpolates between a grayscale image (saturation = 0.0) and the original image (saturation = 1.0). The filter supports extrapolation: For values large than 1.0, it increases saturation.
-        To calculate contrast, this filter uses the following formula:
-        (color.rgb - vec3(0.5)) * contrast + vec3(0.5)
-        This filter calculates brightness by adding a bias value:
-        color.rgb + vec3(brightness)
         """
     }
 

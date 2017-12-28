@@ -31,8 +31,7 @@ class CIExposureAdjust: BaseFilter {
         滤镜：CIExposureAdjust
         系统：iOS5.0
         简介：Adjusts the exposure setting for an image similar to the way you control exposure for a camera when you change the F-stop.
-        详情：This filter multiplies the color values, as follows, to simulate exposure change by the specified F-stops:
-        s.rgb * pow(2.0, ev)
+        详情：This filter multiplies the color values, as follows, to simulate exposure change by the specified F-stops: s.rgb * pow(2.0, ev)
         """
     }
 

@@ -23,14 +23,14 @@ class CIZoomBlur: BaseFilter {
     }
 
     private func setupViews() {
-        let center = PointView(title: "中心点", X: 150.0, Y: 150.0)
-        center.delegate = self
-        self.view.addSubview(center)
+        let point = PointView(title: "Center", X: 150.0, Y: 150.0)
+        point.delegate = self
+        self.view.addSubview(point)
 
-        let slider2 = SliderView(title: "模糊度", min: -200, max: 200, value: 20.0)
-        slider2.delegate = self
-        slider2.frame.origin.y = 300
-        self.view.addSubview(slider2)
+        let slider = SliderView(title: "Amount", min: -200, max: 200, value: 20.0)
+        slider.delegate = self
+        slider.frame.origin.y = 300
+        self.view.addSubview(slider)
     }
 
     private func setupDescription() {

@@ -44,7 +44,6 @@ class CIToneCurve: BaseFilter {
         offset3.frame.origin.y = 300
         self.view.addSubview(offset3)
 
-
         let offset4 = PointView(title: "PT3", X: 0.75, Y: 0.75)
         offset4.delegate = self
         offset4.tag = 103

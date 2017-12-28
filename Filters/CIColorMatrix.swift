@@ -61,12 +61,11 @@ class CIColorMatrix: BaseFilter {
         self.descView.text = """
         滤镜：CIColorMatrix
         系统：iOS5.0
-        详情：This filter performs a matrix multiplication, as follows, to transform the color vector:
-        s.r = dot(s, redVector)
-        s.g = dot(s, greenVector)
-        s.b = dot(s, blueVector)
-        s.a = dot(s, alphaVector)
-        s = s + bias
+        公式：s.r = dot(s, redVector)
+                   s.g = dot(s, greenVector)
+                   s.b = dot(s, blueVector)
+                   s.a = dot(s, alphaVector)
+                   s = s + bias
         """
     }
 
