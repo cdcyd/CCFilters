@@ -45,6 +45,34 @@
 		0D728D671FF36C8800C00B47 /* CIVignetteEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D728D661FF36C8800C00B47 /* CIVignetteEffect.swift */; };
 		0D728D691FF36D8000C00B47 /* MultipleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D728D681FF36D8000C00B47 /* MultipleView.swift */; };
 		0D728D711FF3846900C00B47 /* CIFilter+ColorLUT.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D728D701FF3846900C00B47 /* CIFilter+ColorLUT.m */; };
+		0DF2E1A01FF4D155008E68E8 /* CIAdditionCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E19F1FF4D155008E68E8 /* CIAdditionCompositing.swift */; };
+		0DF2E1A21FF4D165008E68E8 /* CIColorBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1A11FF4D165008E68E8 /* CIColorBlendMode.swift */; };
+		0DF2E1A41FF4D172008E68E8 /* CIColorBurnBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1A31FF4D172008E68E8 /* CIColorBurnBlendMode.swift */; };
+		0DF2E1A61FF4D17D008E68E8 /* CIColorDodgeBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1A51FF4D17D008E68E8 /* CIColorDodgeBlendMode.swift */; };
+		0DF2E1A81FF4D188008E68E8 /* CIDarkenBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1A71FF4D188008E68E8 /* CIDarkenBlendMode.swift */; };
+		0DF2E1AA1FF4D193008E68E8 /* CIDifferenceBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1A91FF4D193008E68E8 /* CIDifferenceBlendMode.swift */; };
+		0DF2E1AC1FF4D19F008E68E8 /* CIDivideBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1AB1FF4D19F008E68E8 /* CIDivideBlendMode.swift */; };
+		0DF2E1AE1FF4D1AB008E68E8 /* CIExclusionBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1AD1FF4D1AB008E68E8 /* CIExclusionBlendMode.swift */; };
+		0DF2E1B01FF4D1B5008E68E8 /* CIHardLightBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1AF1FF4D1B5008E68E8 /* CIHardLightBlendMode.swift */; };
+		0DF2E1B21FF4D1C0008E68E8 /* CIHueBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1B11FF4D1C0008E68E8 /* CIHueBlendMode.swift */; };
+		0DF2E1B41FF4D1CB008E68E8 /* CILightenBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1B31FF4D1CB008E68E8 /* CILightenBlendMode.swift */; };
+		0DF2E1B61FF4D1D6008E68E8 /* CILinearBurnBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1B51FF4D1D6008E68E8 /* CILinearBurnBlendMode.swift */; };
+		0DF2E1B81FF4D1E1008E68E8 /* CILinearDodgeBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1B71FF4D1E1008E68E8 /* CILinearDodgeBlendMode.swift */; };
+		0DF2E1BA1FF4D1ED008E68E8 /* CILuminosityBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1B91FF4D1ED008E68E8 /* CILuminosityBlendMode.swift */; };
+		0DF2E1BC1FF4D1F8008E68E8 /* CIMaximumCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1BB1FF4D1F8008E68E8 /* CIMaximumCompositing.swift */; };
+		0DF2E1BE1FF4D204008E68E8 /* CIMinimumCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1BD1FF4D204008E68E8 /* CIMinimumCompositing.swift */; };
+		0DF2E1C01FF4D20F008E68E8 /* CIMultiplyBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1BF1FF4D20F008E68E8 /* CIMultiplyBlendMode.swift */; };
+		0DF2E1C21FF4D21B008E68E8 /* CIMultiplyCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1C11FF4D21B008E68E8 /* CIMultiplyCompositing.swift */; };
+		0DF2E1C41FF4D225008E68E8 /* CIOverlayBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1C31FF4D225008E68E8 /* CIOverlayBlendMode.swift */; };
+		0DF2E1C61FF4D230008E68E8 /* CIPinLightBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1C51FF4D230008E68E8 /* CIPinLightBlendMode.swift */; };
+		0DF2E1C81FF4D23C008E68E8 /* CISaturationBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1C71FF4D23C008E68E8 /* CISaturationBlendMode.swift */; };
+		0DF2E1CA1FF4D248008E68E8 /* CIScreenBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1C91FF4D248008E68E8 /* CIScreenBlendMode.swift */; };
+		0DF2E1CC1FF4D253008E68E8 /* CISoftLightBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1CB1FF4D253008E68E8 /* CISoftLightBlendMode.swift */; };
+		0DF2E1CE1FF4D25E008E68E8 /* CISourceAtopCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1CD1FF4D25E008E68E8 /* CISourceAtopCompositing.swift */; };
+		0DF2E1D01FF4D269008E68E8 /* CISourceInCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1CF1FF4D269008E68E8 /* CISourceInCompositing.swift */; };
+		0DF2E1D21FF4D275008E68E8 /* CISourceOutCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1D11FF4D275008E68E8 /* CISourceOutCompositing.swift */; };
+		0DF2E1D41FF4D281008E68E8 /* CISourceOverCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1D31FF4D281008E68E8 /* CISourceOverCompositing.swift */; };
+		0DF2E1D61FF4D28D008E68E8 /* CISubtractBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1D51FF4D28D008E68E8 /* CISubtractBlendMode.swift */; };
 		D932AC671FC2D4EB00764902 /* CIDiscBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932AC661FC2D4EB00764902 /* CIDiscBlur.swift */; };
 		D932AC691FC2D5AB00764902 /* CIGaussianBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932AC681FC2D5AB00764902 /* CIGaussianBlur.swift */; };
 		D932AC6B1FC2D70100764902 /* CIMaskedVariableBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932AC6A1FC2D70100764902 /* CIMaskedVariableBlur.swift */; };
@@ -105,6 +133,34 @@
 		0D728D6B1FF3810A00C00B47 /* Filters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Filters-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D728D6F1FF3846900C00B47 /* CIFilter+ColorLUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIFilter+ColorLUT.h"; sourceTree = "<group>"; };
 		0D728D701FF3846900C00B47 /* CIFilter+ColorLUT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIFilter+ColorLUT.m"; sourceTree = "<group>"; };
+		0DF2E19F1FF4D155008E68E8 /* CIAdditionCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIAdditionCompositing.swift; sourceTree = "<group>"; };
+		0DF2E1A11FF4D165008E68E8 /* CIColorBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1A31FF4D172008E68E8 /* CIColorBurnBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorBurnBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1A51FF4D17D008E68E8 /* CIColorDodgeBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorDodgeBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1A71FF4D188008E68E8 /* CIDarkenBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIDarkenBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1A91FF4D193008E68E8 /* CIDifferenceBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIDifferenceBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1AB1FF4D19F008E68E8 /* CIDivideBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIDivideBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1AD1FF4D1AB008E68E8 /* CIExclusionBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIExclusionBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1AF1FF4D1B5008E68E8 /* CIHardLightBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIHardLightBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1B11FF4D1C0008E68E8 /* CIHueBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIHueBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1B31FF4D1CB008E68E8 /* CILightenBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CILightenBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1B51FF4D1D6008E68E8 /* CILinearBurnBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CILinearBurnBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1B71FF4D1E1008E68E8 /* CILinearDodgeBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CILinearDodgeBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1B91FF4D1ED008E68E8 /* CILuminosityBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CILuminosityBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1BB1FF4D1F8008E68E8 /* CIMaximumCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMaximumCompositing.swift; sourceTree = "<group>"; };
+		0DF2E1BD1FF4D204008E68E8 /* CIMinimumCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMinimumCompositing.swift; sourceTree = "<group>"; };
+		0DF2E1BF1FF4D20F008E68E8 /* CIMultiplyBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMultiplyBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1C11FF4D21B008E68E8 /* CIMultiplyCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMultiplyCompositing.swift; sourceTree = "<group>"; };
+		0DF2E1C31FF4D225008E68E8 /* CIOverlayBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIOverlayBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1C51FF4D230008E68E8 /* CIPinLightBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIPinLightBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1C71FF4D23C008E68E8 /* CISaturationBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISaturationBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1C91FF4D248008E68E8 /* CIScreenBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIScreenBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1CB1FF4D253008E68E8 /* CISoftLightBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISoftLightBlendMode.swift; sourceTree = "<group>"; };
+		0DF2E1CD1FF4D25E008E68E8 /* CISourceAtopCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISourceAtopCompositing.swift; sourceTree = "<group>"; };
+		0DF2E1CF1FF4D269008E68E8 /* CISourceInCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISourceInCompositing.swift; sourceTree = "<group>"; };
+		0DF2E1D11FF4D275008E68E8 /* CISourceOutCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISourceOutCompositing.swift; sourceTree = "<group>"; };
+		0DF2E1D31FF4D281008E68E8 /* CISourceOverCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISourceOverCompositing.swift; sourceTree = "<group>"; };
+		0DF2E1D51FF4D28D008E68E8 /* CISubtractBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CISubtractBlendMode.swift; sourceTree = "<group>"; };
 		D932AC661FC2D4EB00764902 /* CIDiscBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIDiscBlur.swift; sourceTree = "<group>"; };
 		D932AC681FC2D5AB00764902 /* CIGaussianBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIGaussianBlur.swift; sourceTree = "<group>"; };
 		D932AC6A1FC2D70100764902 /* CIMaskedVariableBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIMaskedVariableBlur.swift; sourceTree = "<group>"; };
@@ -174,6 +230,41 @@
 				0D728D6B1FF3810A00C00B47 /* Filters-Bridging-Header.h */,
 			);
 			name = Tool;
+			sourceTree = "<group>";
+		};
+		0DF2E19B1FF4D0E7008E68E8 /* CICategoryCompositeOperation */ = {
+			isa = PBXGroup;
+			children = (
+				0DF2E19F1FF4D155008E68E8 /* CIAdditionCompositing.swift */,
+				0DF2E1A11FF4D165008E68E8 /* CIColorBlendMode.swift */,
+				0DF2E1A31FF4D172008E68E8 /* CIColorBurnBlendMode.swift */,
+				0DF2E1A51FF4D17D008E68E8 /* CIColorDodgeBlendMode.swift */,
+				0DF2E1A71FF4D188008E68E8 /* CIDarkenBlendMode.swift */,
+				0DF2E1A91FF4D193008E68E8 /* CIDifferenceBlendMode.swift */,
+				0DF2E1AB1FF4D19F008E68E8 /* CIDivideBlendMode.swift */,
+				0DF2E1AD1FF4D1AB008E68E8 /* CIExclusionBlendMode.swift */,
+				0DF2E1AF1FF4D1B5008E68E8 /* CIHardLightBlendMode.swift */,
+				0DF2E1B11FF4D1C0008E68E8 /* CIHueBlendMode.swift */,
+				0DF2E1B31FF4D1CB008E68E8 /* CILightenBlendMode.swift */,
+				0DF2E1B51FF4D1D6008E68E8 /* CILinearBurnBlendMode.swift */,
+				0DF2E1B71FF4D1E1008E68E8 /* CILinearDodgeBlendMode.swift */,
+				0DF2E1B91FF4D1ED008E68E8 /* CILuminosityBlendMode.swift */,
+				0DF2E1BB1FF4D1F8008E68E8 /* CIMaximumCompositing.swift */,
+				0DF2E1BD1FF4D204008E68E8 /* CIMinimumCompositing.swift */,
+				0DF2E1BF1FF4D20F008E68E8 /* CIMultiplyBlendMode.swift */,
+				0DF2E1C11FF4D21B008E68E8 /* CIMultiplyCompositing.swift */,
+				0DF2E1C31FF4D225008E68E8 /* CIOverlayBlendMode.swift */,
+				0DF2E1C51FF4D230008E68E8 /* CIPinLightBlendMode.swift */,
+				0DF2E1C71FF4D23C008E68E8 /* CISaturationBlendMode.swift */,
+				0DF2E1C91FF4D248008E68E8 /* CIScreenBlendMode.swift */,
+				0DF2E1CB1FF4D253008E68E8 /* CISoftLightBlendMode.swift */,
+				0DF2E1CD1FF4D25E008E68E8 /* CISourceAtopCompositing.swift */,
+				0DF2E1CF1FF4D269008E68E8 /* CISourceInCompositing.swift */,
+				0DF2E1D11FF4D275008E68E8 /* CISourceOutCompositing.swift */,
+				0DF2E1D31FF4D281008E68E8 /* CISourceOverCompositing.swift */,
+				0DF2E1D51FF4D28D008E68E8 /* CISubtractBlendMode.swift */,
+			);
+			name = CICategoryCompositeOperation;
 			sourceTree = "<group>";
 		};
 		D93544C31F6FA252006C5496 /* Extension */ = {
@@ -278,6 +369,7 @@
 				D94D50FE1FC3C4E000BEBB19 /* CICategoryBlur */,
 				D94D51021FC4225E00BEBB19 /* CICategoryColorAdjustment */,
 				0D5E73241FE905F700D172B8 /* CICategoryColorEffect */,
+				0DF2E19B1FF4D0E7008E68E8 /* CICategoryCompositeOperation */,
 			);
 			name = CICategoryBlur;
 			sourceTree = "<group>";
@@ -356,12 +448,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF2E1C21FF4D21B008E68E8 /* CIMultiplyCompositing.swift in Sources */,
 				0D728D671FF36C8800C00B47 /* CIVignetteEffect.swift in Sources */,
+				0DF2E1BE1FF4D204008E68E8 /* CIMinimumCompositing.swift in Sources */,
 				0D728D631FF36C7200C00B47 /* CISepiaTone.swift in Sources */,
 				D94D51011FC3C77100BEBB19 /* CIZoomBlur.swift in Sources */,
+				0DF2E1AC1FF4D19F008E68E8 /* CIDivideBlendMode.swift in Sources */,
+				0DF2E1CA1FF4D248008E68E8 /* CIScreenBlendMode.swift in Sources */,
+				0DF2E1B81FF4D1E1008E68E8 /* CILinearDodgeBlendMode.swift in Sources */,
 				D94D50FD1FC3C4D100BEBB19 /* CINoiseReduction.swift in Sources */,
+				0DF2E1D01FF4D269008E68E8 /* CISourceInCompositing.swift in Sources */,
+				0DF2E1B01FF4D1B5008E68E8 /* CIHardLightBlendMode.swift in Sources */,
+				0DF2E1BC1FF4D1F8008E68E8 /* CIMaximumCompositing.swift in Sources */,
+				0DF2E1CC1FF4D253008E68E8 /* CISoftLightBlendMode.swift in Sources */,
 				0D5E73211FE8BB0200D172B8 /* CIWhitePointAdjust.swift in Sources */,
 				0D728D691FF36D8000C00B47 /* MultipleView.swift in Sources */,
+				0DF2E1A41FF4D172008E68E8 /* CIColorBurnBlendMode.swift in Sources */,
+				0DF2E1C81FF4D23C008E68E8 /* CISaturationBlendMode.swift in Sources */,
+				0DF2E1A21FF4D165008E68E8 /* CIColorBlendMode.swift in Sources */,
 				D9BBFDD21F6BB1EC00A09E46 /* BaseFilter.swift in Sources */,
 				0D728D411FF36B7800C00B47 /* CIColorCubeWithColorSpace.swift in Sources */,
 				D9BBFDD01F6BAB4F00A09E46 /* CIBoxBlur.swift in Sources */,
@@ -371,19 +475,26 @@
 				0D728D451FF36B9700C00B47 /* CIColorMap.swift in Sources */,
 				0D5E73231FE8F3C800D172B8 /* PointView.swift in Sources */,
 				0D728D591FF36C3600C00B47 /* CIPhotoEffectMono.swift in Sources */,
+				0DF2E1B21FF4D1C0008E68E8 /* CIHueBlendMode.swift in Sources */,
+				0DF2E1A81FF4D188008E68E8 /* CIDarkenBlendMode.swift in Sources */,
 				0D728D4F1FF36BE400C00B47 /* CIMaximumComponent.swift in Sources */,
 				0D728D4D1FF36BD300C00B47 /* CIMaskToAlpha.swift in Sources */,
 				0D5E73191FE8BACD00D172B8 /* CITemperatureAndTint.swift in Sources */,
 				0D728D491FF36BB300C00B47 /* CIColorPosterize.swift in Sources */,
 				D932AC691FC2D5AB00764902 /* CIGaussianBlur.swift in Sources */,
+				0DF2E1D61FF4D28D008E68E8 /* CISubtractBlendMode.swift in Sources */,
 				D94D51041FC4228500BEBB19 /* CIColorClamp.swift in Sources */,
+				0DF2E1A01FF4D155008E68E8 /* CIAdditionCompositing.swift in Sources */,
 				D9BBFDBD1F6BAAFA00A09E46 /* AppDelegate.swift in Sources */,
 				D932AC671FC2D4EB00764902 /* CIDiscBlur.swift in Sources */,
+				0DF2E1B61FF4D1D6008E68E8 /* CILinearBurnBlendMode.swift in Sources */,
 				0D728D711FF3846900C00B47 /* CIFilter+ColorLUT.m in Sources */,
+				0DF2E1C01FF4D20F008E68E8 /* CIMultiplyBlendMode.swift in Sources */,
 				0D5E73091FE8A03700D172B8 /* RGBAView.swift in Sources */,
 				D93544C81F6FB8FC006C5496 /* UIImageExt.swift in Sources */,
 				0D5E73131FE8BAAE00D172B8 /* CIGammaAdjust.swift in Sources */,
 				0D728D531FF36BFF00C00B47 /* CIPhotoEffectChrome.swift in Sources */,
+				0DF2E1AE1FF4D1AB008E68E8 /* CIExclusionBlendMode.swift in Sources */,
 				0D728D471FF36BA600C00B47 /* CIColorMonochrome.swift in Sources */,
 				0D728D5D1FF36C4E00C00B47 /* CIPhotoEffectProcess.swift in Sources */,
 				0D728D651FF36C7D00C00B47 /* CIVignette.swift in Sources */,
@@ -391,19 +502,28 @@
 				0D728D551FF36C1900C00B47 /* CIPhotoEffectFade.swift in Sources */,
 				0D5E73171FE8BAC200D172B8 /* CILinearToSRGBToneCurve.swift in Sources */,
 				D932AC6B1FC2D70100764902 /* CIMaskedVariableBlur.swift in Sources */,
+				0DF2E1C61FF4D230008E68E8 /* CIPinLightBlendMode.swift in Sources */,
+				0DF2E1BA1FF4D1ED008E68E8 /* CILuminosityBlendMode.swift in Sources */,
 				0D728D3F1FF36B6A00C00B47 /* CIColorCube.swift in Sources */,
 				0D5E730D1FE8BA8700D172B8 /* CIColorMatrix.swift in Sources */,
 				0D728D571FF36C2800C00B47 /* CIPhotoEffectInstant.swift in Sources */,
 				D9BBFDD81F6BBDB200A09E46 /* SliderView.swift in Sources */,
+				0DF2E1C41FF4D225008E68E8 /* CIOverlayBlendMode.swift in Sources */,
 				0D5E730F1FE8BA9400D172B8 /* CIColorPolynomial.swift in Sources */,
+				0DF2E1B41FF4D1CB008E68E8 /* CILightenBlendMode.swift in Sources */,
 				0D728D611FF36C6500C00B47 /* CIPhotoEffectTransfer.swift in Sources */,
 				0D728D3D1FF36B5A00C00B47 /* CIColorCrossPolynomial.swift in Sources */,
+				0DF2E1D21FF4D275008E68E8 /* CISourceOutCompositing.swift in Sources */,
 				0D5E731B1FE8BADF00D172B8 /* CISRGBToneCurveToLinear.swift in Sources */,
+				0DF2E1A61FF4D17D008E68E8 /* CIColorDodgeBlendMode.swift in Sources */,
 				0D5E73111FE8BAA200D172B8 /* CIExposureAdjust.swift in Sources */,
+				0DF2E1D41FF4D281008E68E8 /* CISourceOverCompositing.swift in Sources */,
 				D94D50FB1FC3B98A00BEBB19 /* CIMotionBlur.swift in Sources */,
 				0D728D4B1FF36BC400C00B47 /* CIFalseColor.swift in Sources */,
 				0D5E73151FE8BAB800D172B8 /* CIHueAdjust.swift in Sources */,
+				0DF2E1CE1FF4D25E008E68E8 /* CISourceAtopCompositing.swift in Sources */,
 				0D728D511FF36BF000C00B47 /* CIMinimumComponent.swift in Sources */,
+				0DF2E1AA1FF4D193008E68E8 /* CIDifferenceBlendMode.swift in Sources */,
 				0D5E731F1FE8BAF700D172B8 /* CIVibrance.swift in Sources */,
 				0D728D5B1FF36C4200C00B47 /* CIPhotoEffectNoir.swift in Sources */,
 				0D5E731D1FE8BAED00D172B8 /* CIToneCurve.swift in Sources */,
