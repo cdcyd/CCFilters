@@ -1,2 +1,3 @@
 # CCFilters
-apple CoreImage 所有滤镜效果(iOS11)
+CoreImage 所有滤镜效果(iOS11)
+目前已实现CICategoryBlur、CICategoryColorAdjustment、CICategoryColorEffect、CICategoryCompositeOperation、CICategoryDistortionEffect
