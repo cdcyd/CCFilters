@@ -408,8 +408,8 @@
 			children = (
 				0D728D6A1FF380F300C00B47 /* Tool */,
 				D93544C41F6FA2B0006C5496 /* View */,
+				D9BBFDCE1F6BAB1800A09E46 /* Class */,
 				D93544C31F6FA252006C5496 /* Extension */,
-				D9BBFDCE1F6BAB1800A09E46 /* CICategoryBlur */,
 				D9BBFDBC1F6BAAFA00A09E46 /* AppDelegate.swift */,
 				D9BBFDBE1F6BAAFA00A09E46 /* ViewController.swift */,
 				D9BBFDC01F6BAAFA00A09E46 /* Main.storyboard */,
@@ -420,7 +420,7 @@
 			path = Filters;
 			sourceTree = "<group>";
 		};
-		D9BBFDCE1F6BAB1800A09E46 /* CICategoryBlur */ = {
+		D9BBFDCE1F6BAB1800A09E46 /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				D94D50FF1FC3C4E800BEBB19 /* Base */,
@@ -430,7 +430,7 @@
 				0DF2E19B1FF4D0E7008E68E8 /* CICategoryCompositeOperation */,
 				0D5EA9712003684A00855D36 /* CICategoryDistortionEffect */,
 			);
-			name = CICategoryBlur;
+			name = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
