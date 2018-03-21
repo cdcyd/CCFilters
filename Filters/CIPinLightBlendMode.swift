@@ -10,9 +10,9 @@ import UIKit
 
 class CIPinLightBlendMode: BaseFilter {
 
-    let image = UIImage("ImageP")
-    let back = CIImage.init(cgImage: UIImage("ImageQ").cgImage!)
-    let name = "CIPinLightBlendMode"
+    private let image = UIImage("ImageP")
+    private let back = CIImage.init(cgImage: UIImage("ImageQ").cgImage!)
+    private let name = "CIPinLightBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,9 +10,9 @@ import UIKit
 
 class CIColorDodgeBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIColorDodgeBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIColorDodgeBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,9 +10,9 @@ import UIKit
 
 class CIExclusionBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIExclusionBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIExclusionBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

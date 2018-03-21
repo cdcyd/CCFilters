@@ -10,9 +10,9 @@ import UIKit
 
 class CISubtractBlendMode: BaseFilter {
 
-    let image = UIImage("ImageP")
-    let back = CIImage.init(cgImage: UIImage("ImageQ").cgImage!)
-    let name = "CISubtractBlendMode"
+    private let image = UIImage("ImageP")
+    private let back = CIImage.init(cgImage: UIImage("ImageQ").cgImage!)
+    private let name = "CISubtractBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

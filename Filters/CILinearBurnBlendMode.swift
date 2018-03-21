@@ -10,9 +10,9 @@ import UIKit
 
 class CILinearBurnBlendMode: BaseFilter {
 
-    let image = UIImage("ImageP")
-    let back = CIImage.init(cgImage: UIImage("ImageQ").cgImage!)
-    let name = "CILinearBurnBlendMode"
+    private let image = UIImage("ImageP")
+    private let back = CIImage.init(cgImage: UIImage("ImageQ").cgImage!)
+    private let name = "CILinearBurnBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

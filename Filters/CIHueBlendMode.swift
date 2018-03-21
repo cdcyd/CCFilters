@@ -10,9 +10,9 @@ import UIKit
 
 class CIHueBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIHueBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIHueBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

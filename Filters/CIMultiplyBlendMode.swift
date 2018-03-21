@@ -10,9 +10,9 @@ import UIKit
 
 class CIMultiplyBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIMultiplyBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIMultiplyBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

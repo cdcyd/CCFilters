@@ -10,9 +10,9 @@ import UIKit
 
 class CIHardLightBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIHardLightBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIHardLightBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

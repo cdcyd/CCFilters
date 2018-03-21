@@ -30,32 +30,35 @@ class PointView: UIView {
         self.addSubview(label)
 
         let tf1 = UITextField()
+        tf1.text = X.description
         tf1.font = UIFont.systemFont(ofSize: 14)
-        tf1.leftViewMode = .always
-        tf1.leftView = self.leftView(title: " X:")
-        tf1.text = "\(X)"
         tf1.frame = CGRect(x: label.frame.maxX + 5, y: 0, width: 100, height: tf1.font!.lineHeight)
-        tf1.borderStyle = .roundedRect
-        tf1.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         tf1.keyboardType = .decimalPad
+        tf1.leftViewMode = .always
+        tf1.borderStyle = .roundedRect
+        tf1.leftView = self.leftView(title: " X:")
+        tf1.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf1)
         self.tf1 = tf1
 
         let tf2 = UITextField()
+        tf2.text = Y.description
         tf2.font = UIFont.systemFont(ofSize: 14)
-        tf2.leftViewMode = .always
-        tf2.leftView = self.leftView(title: " Y:")
-        tf2.text = "\(Y)"
         tf2.frame = CGRect(x: tf1.frame.maxX + 5, y: 0, width: 100, height: tf2.font!.lineHeight)
-        tf2.borderStyle = .roundedRect
-        tf2.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
+        tf2.leftViewMode = .always
         tf2.keyboardType = .decimalPad
+        tf2.borderStyle = .roundedRect
+        tf2.leftView = self.leftView(title: " Y:")
+        tf2.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf2)
         self.tf2 = tf2
 
-        self.frame = CGRect(x: 0, y: 250, width: tf2.frame.maxX + 4, height: tf2.font!.lineHeight)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChanged(_:)),
+                                               name: NSNotification.Name.UIKeyboardWillChangeFrame,
+                                               object: nil)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChanged(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        self.frame = CGRect(x: 0, y: 250, width: tf2.frame.maxX + 4, height: tf2.font!.lineHeight)
     }
 
     @objc private func textDidChanged(_ tf: UITextField) {

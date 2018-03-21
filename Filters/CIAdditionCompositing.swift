@@ -10,9 +10,9 @@ import UIKit
 
 class CIAdditionCompositing: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIAdditionCompositing"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIAdditionCompositing"
 
     override func viewDidLoad() {
         super.viewDidLoad()

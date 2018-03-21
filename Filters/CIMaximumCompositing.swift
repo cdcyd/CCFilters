@@ -10,9 +10,9 @@ import UIKit
 
 class CIMaximumCompositing: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIMaximumCompositing"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIMaximumCompositing"
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,9 +10,9 @@ import UIKit
 
 class CIOverlayBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIOverlayBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIOverlayBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -35,7 +35,7 @@ class RGBAView: UIView {
         tf1.font = UIFont.systemFont(ofSize: 14)
         tf1.leftViewMode = .always
         tf1.leftView = self.leftView(title: " R:")
-        tf1.text = "\(R)"
+        tf1.text = R.description
         tf1.frame = CGRect(x: label.frame.maxX + 5, y: 0, width: 66, height: tf1.font!.lineHeight)
         tf1.borderStyle = .roundedRect
         tf1.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
@@ -47,7 +47,7 @@ class RGBAView: UIView {
         tf2.font = UIFont.systemFont(ofSize: 14)
         tf2.leftViewMode = .always
         tf2.leftView = self.leftView(title: " G:")
-        tf2.text = "\(G)"
+        tf2.text = G.description
         tf2.frame = CGRect(x: tf1.frame.maxX + 5, y: 0, width: 66, height: tf2.font!.lineHeight)
         tf2.borderStyle = .roundedRect
         tf2.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
@@ -59,7 +59,7 @@ class RGBAView: UIView {
         tf3.font = UIFont.systemFont(ofSize: 14)
         tf3.leftViewMode = .always
         tf3.leftView = self.leftView(title: " B:")
-        tf3.text = "\(B)"
+        tf3.text = B.description
         tf3.frame = CGRect(x: tf2.frame.maxX + 5, y: 0, width: 66, height: tf3.font!.lineHeight)
         tf3.borderStyle = .roundedRect
         tf3.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
@@ -71,7 +71,7 @@ class RGBAView: UIView {
         tf4.font = UIFont.systemFont(ofSize: 14)
         tf4.leftViewMode = .always
         tf4.leftView = self.leftView(title: " A:")
-        tf4.text = "\(A)"
+        tf4.text = A.description
         tf4.frame = CGRect(x: tf3.frame.maxX + 5, y: 0, width: 66, height: tf4.font!.lineHeight)
         tf4.borderStyle = .roundedRect
         tf4.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)

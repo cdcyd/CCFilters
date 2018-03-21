@@ -10,9 +10,9 @@ import UIKit
 
 class CIDifferenceBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIDifferenceBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIDifferenceBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

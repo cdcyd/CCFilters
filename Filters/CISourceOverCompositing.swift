@@ -10,9 +10,9 @@ import UIKit
 
 class CISourceOverCompositing: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CISourceOverCompositing"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CISourceOverCompositing"
 
     override func viewDidLoad() {
         super.viewDidLoad()

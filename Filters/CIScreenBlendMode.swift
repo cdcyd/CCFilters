@@ -10,9 +10,9 @@ import UIKit
 
 class CIScreenBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CIScreenBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CIScreenBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

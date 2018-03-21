@@ -10,9 +10,9 @@ import UIKit
 
 class CILuminosityBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CILuminosityBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CILuminosityBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,9 +10,9 @@ import UIKit
 
 class CISaturationBlendMode: BaseFilter {
 
-    let image = UIImage("ImageO")
-    let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
-    let name = "CISaturationBlendMode"
+    private let image = UIImage("ImageO")
+    private let back = CIImage.init(cgImage: UIImage("ImageN").cgImage!)
+    private let name = "CISaturationBlendMode"
 
     override func viewDidLoad() {
         super.viewDidLoad()
