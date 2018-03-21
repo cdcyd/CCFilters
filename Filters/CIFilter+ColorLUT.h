@@ -12,7 +12,6 @@
 
 + (UIImage *)colorCubeInput:(NSString *)ipt color:(NSString *)color dimension:(NSInteger)n;
 
-
 + (UIImage *)colorCubeInput:(NSString *)ipt color:(NSString *)color space:(CGColorSpaceRef)space dimension:(NSInteger)n;
     
 @end

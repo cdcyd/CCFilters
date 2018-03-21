@@ -16,9 +16,6 @@ class PointView: UIView {
 
     weak var delegate: PointViewDelegate?
 
-    private var tf1: UITextField!
-    private var tf2: UITextField!
-
     init(title: String, X: Float, Y: Float) {
         super.init(frame: .zero)
 
@@ -30,28 +27,28 @@ class PointView: UIView {
         self.addSubview(label)
 
         let tf1 = UITextField()
+        tf1.tag = 100
         tf1.text = X.description
         tf1.font = UIFont.systemFont(ofSize: 14)
         tf1.frame = CGRect(x: label.frame.maxX + 5, y: 0, width: 100, height: tf1.font!.lineHeight)
+        tf1.leftView = UILabel(text: " X:")
+        tf1.borderStyle = .roundedRect
         tf1.keyboardType = .decimalPad
         tf1.leftViewMode = .always
-        tf1.borderStyle = .roundedRect
-        tf1.leftView = self.leftView(title: " X:")
         tf1.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf1)
-        self.tf1 = tf1
 
         let tf2 = UITextField()
+        tf1.tag = 101
         tf2.text = Y.description
         tf2.font = UIFont.systemFont(ofSize: 14)
         tf2.frame = CGRect(x: tf1.frame.maxX + 5, y: 0, width: 100, height: tf2.font!.lineHeight)
+        tf2.leftView = UILabel(text: " Y:")
+        tf2.borderStyle = .roundedRect
         tf2.leftViewMode = .always
         tf2.keyboardType = .decimalPad
-        tf2.borderStyle = .roundedRect
-        tf2.leftView = self.leftView(title: " Y:")
         tf2.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf2)
-        self.tf2 = tf2
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillChanged(_:)),
@@ -62,17 +59,14 @@ class PointView: UIView {
     }
 
     @objc private func textDidChanged(_ tf: UITextField) {
-        let ci = CIVector(x: CGFloat(Float(tf1.text ?? "0") ?? 0.0),
-                          y: CGFloat(Float(tf2.text ?? "0") ?? 0.0))
+        let tf1 = self.viewWithTag(100) as? UITextField ?? tf
+        let tf2 = self.viewWithTag(101) as? UITextField ?? tf
+        let ci = CIVector(x: CGFloat(Float(tf1.text ?? "0") ?? 0.0), y: CGFloat(Float(tf2.text ?? "0") ?? 0.0))
         delegate?.didChangedValue(view: self, point: ci)
     }
 
     @objc private func keyboardWillChanged(_ not: Notification) {
-        if tf1.isFirstResponder {
-            self.keyboardAnimation(dic: not.userInfo! as NSDictionary)
-        } else if tf2.isFirstResponder {
-            self.keyboardAnimation(dic: not.userInfo! as NSDictionary)
-        }
+        self.keyboardAnimation(dic: not.userInfo! as NSDictionary)
     }
 
     private func keyboardAnimation(dic: NSDictionary) {
@@ -97,30 +91,11 @@ class PointView: UIView {
         }
     }
 
-    private func viewController() -> UIViewController? {
-        if self.next != nil && self.next!.isKind(of: UIViewController.self) {
-            return self.next as? UIViewController
-        }
-        var superview = self.superview
-        while superview != nil {
-            if superview!.next != nil && superview!.next!.isKind(of: UIViewController.self) {
-                return superview!.next as? UIViewController
-            }
-            superview = superview?.superview
-        }
-        return nil
-    }
-
-    private func leftView(title: String) -> UILabel {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.text = title
-        label.sizeToFit()
-        return label
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }

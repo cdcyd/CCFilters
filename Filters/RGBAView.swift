@@ -16,11 +16,6 @@ class RGBAView: UIView {
 
     weak var delegate: RGBAViewDelegate?
 
-    private var tf1: UITextField!
-    private var tf2: UITextField!
-    private var tf3: UITextField!
-    private var tf4: UITextField!
-
     init(title: String, R: Float, G: Float, B: Float, A: Float) {
         super.init(frame: .zero)
 
@@ -32,59 +27,66 @@ class RGBAView: UIView {
         self.addSubview(label)
 
         let tf1 = UITextField()
-        tf1.font = UIFont.systemFont(ofSize: 14)
-        tf1.leftViewMode = .always
-        tf1.leftView = self.leftView(title: " R:")
+        tf1.tag = 100
         tf1.text = R.description
+        tf1.font = UIFont.systemFont(ofSize: 14)
         tf1.frame = CGRect(x: label.frame.maxX + 5, y: 0, width: 66, height: tf1.font!.lineHeight)
+        tf1.leftView = UILabel(text: " R:")
         tf1.borderStyle = .roundedRect
-        tf1.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         tf1.keyboardType = .decimalPad
+        tf1.leftViewMode = .always
+        tf1.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf1)
-        self.tf1 = tf1
 
         let tf2 = UITextField()
-        tf2.font = UIFont.systemFont(ofSize: 14)
-        tf2.leftViewMode = .always
-        tf2.leftView = self.leftView(title: " G:")
+        tf2.tag = 101
         tf2.text = G.description
+        tf2.font = UIFont.systemFont(ofSize: 14)
         tf2.frame = CGRect(x: tf1.frame.maxX + 5, y: 0, width: 66, height: tf2.font!.lineHeight)
+        tf2.leftView = UILabel(text: " G:")
         tf2.borderStyle = .roundedRect
-        tf2.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         tf2.keyboardType = .decimalPad
+        tf2.leftViewMode = .always
+        tf2.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf2)
-        self.tf2 = tf2
 
         let tf3 = UITextField()
-        tf3.font = UIFont.systemFont(ofSize: 14)
-        tf3.leftViewMode = .always
-        tf3.leftView = self.leftView(title: " B:")
+        tf3.tag = 102
         tf3.text = B.description
+        tf3.font = UIFont.systemFont(ofSize: 14)
         tf3.frame = CGRect(x: tf2.frame.maxX + 5, y: 0, width: 66, height: tf3.font!.lineHeight)
+        tf3.leftView = UILabel(text: " B:")
         tf3.borderStyle = .roundedRect
-        tf3.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         tf3.keyboardType = .decimalPad
+        tf3.leftViewMode = .always
+        tf3.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf3)
-        self.tf3 = tf3
 
         let tf4 = UITextField()
-        tf4.font = UIFont.systemFont(ofSize: 14)
-        tf4.leftViewMode = .always
-        tf4.leftView = self.leftView(title: " A:")
+        tf4.tag = 103
         tf4.text = A.description
+        tf4.font = UIFont.systemFont(ofSize: 14)
         tf4.frame = CGRect(x: tf3.frame.maxX + 5, y: 0, width: 66, height: tf4.font!.lineHeight)
+        tf4.leftView = UILabel(text: " A:")
         tf4.borderStyle = .roundedRect
-        tf4.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         tf4.keyboardType = .decimalPad
+        tf4.leftViewMode = .always
+        tf4.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf4)
-        self.tf4 = tf4
 
         self.frame = CGRect(x: 0, y: 250, width: tf4.frame.maxX + 4, height: tf4.font!.lineHeight)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChanged(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChanged(_:)),
+                                               name: NSNotification.Name.UIKeyboardWillChangeFrame,
+                                               object: nil)
     }
 
     @objc private func textDidChanged(_ tf: UITextField) {
+        let tf1 = self.viewWithTag(100) as? UITextField ?? tf
+        let tf2 = self.viewWithTag(101) as? UITextField ?? tf
+        let tf3 = self.viewWithTag(102) as? UITextField ?? tf
+        let tf4 = self.viewWithTag(103) as? UITextField ?? tf
         let ci = CIVector(x: CGFloat(Float(tf1.text ?? "0") ?? 0.0),
                           y: CGFloat(Float(tf2.text ?? "0") ?? 0.0),
                           z: CGFloat(Float(tf3.text ?? "0") ?? 0.0),
@@ -93,15 +95,7 @@ class RGBAView: UIView {
     }
 
     @objc private func keyboardWillChanged(_ not: Notification) {
-        if tf1.isFirstResponder {
-            self.keyboardAnimation(dic: not.userInfo! as NSDictionary)
-        } else if tf2.isFirstResponder {
-            self.keyboardAnimation(dic: not.userInfo! as NSDictionary)
-        } else if tf3.isFirstResponder {
-            self.keyboardAnimation(dic: not.userInfo! as NSDictionary)
-        } else if tf4.isFirstResponder {
-            self.keyboardAnimation(dic: not.userInfo! as NSDictionary)
-        }
+        self.keyboardAnimation(dic: not.userInfo! as NSDictionary)
     }
 
     private func keyboardAnimation(dic: NSDictionary) {
@@ -126,26 +120,8 @@ class RGBAView: UIView {
         }
     }
 
-    private func viewController() -> UIViewController? {
-        if self.next != nil && self.next!.isKind(of: UIViewController.self) {
-            return self.next as? UIViewController
-        }
-        var superview = self.superview
-        while superview != nil {
-            if superview!.next != nil && superview!.next!.isKind(of: UIViewController.self) {
-                return superview!.next as? UIViewController
-            }
-            superview = superview?.superview
-        }
-        return nil
-    }
-
-    private func leftView(title: String) -> UILabel {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.text = title
-        label.sizeToFit()
-        return label
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {

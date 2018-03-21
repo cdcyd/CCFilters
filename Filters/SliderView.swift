@@ -49,8 +49,8 @@ class SliderView: UIView {
         self.frame = CGRect(x: 0, y: 250, width: valueLabel.frame.maxX + 4, height: label.bounds.height)
     }
     
-    @objc private func valueChanged(slider:UISlider) {
-        self.valueLabel.text = String.init(format: "%.2f", slider.value)
+    @objc private func valueChanged(slider: UISlider) {
+        self.valueLabel.text = String(format: "%.2f", slider.value)
         delegate?.didChangedValue(slider: slider)
     }
     

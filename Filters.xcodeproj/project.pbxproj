@@ -60,6 +60,8 @@
 		0D728D671FF36C8800C00B47 /* CIVignetteEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D728D661FF36C8800C00B47 /* CIVignetteEffect.swift */; };
 		0D728D691FF36D8000C00B47 /* MultipleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D728D681FF36D8000C00B47 /* MultipleView.swift */; };
 		0D728D711FF3846900C00B47 /* CIFilter+ColorLUT.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D728D701FF3846900C00B47 /* CIFilter+ColorLUT.m */; };
+		0DB2C75D2061FBEE00994162 /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2C75C2061FBEE00994162 /* UILabelExt.swift */; };
+		0DB2C75F2061FC9300994162 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB2C75E2061FC9300994162 /* UIViewExt.swift */; };
 		0DF2E1A01FF4D155008E68E8 /* CIAdditionCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E19F1FF4D155008E68E8 /* CIAdditionCompositing.swift */; };
 		0DF2E1A21FF4D165008E68E8 /* CIColorBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1A11FF4D165008E68E8 /* CIColorBlendMode.swift */; };
 		0DF2E1A41FF4D172008E68E8 /* CIColorBurnBlendMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF2E1A31FF4D172008E68E8 /* CIColorBurnBlendMode.swift */; };
@@ -163,6 +165,8 @@
 		0D728D6B1FF3810A00C00B47 /* Filters-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Filters-Bridging-Header.h"; sourceTree = "<group>"; };
 		0D728D6F1FF3846900C00B47 /* CIFilter+ColorLUT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CIFilter+ColorLUT.h"; sourceTree = "<group>"; };
 		0D728D701FF3846900C00B47 /* CIFilter+ColorLUT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CIFilter+ColorLUT.m"; sourceTree = "<group>"; };
+		0DB2C75C2061FBEE00994162 /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
+		0DB2C75E2061FC9300994162 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		0DF2E19F1FF4D155008E68E8 /* CIAdditionCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIAdditionCompositing.swift; sourceTree = "<group>"; };
 		0DF2E1A11FF4D165008E68E8 /* CIColorBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorBlendMode.swift; sourceTree = "<group>"; };
 		0DF2E1A31FF4D172008E68E8 /* CIColorBurnBlendMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIColorBurnBlendMode.swift; sourceTree = "<group>"; };
@@ -255,21 +259,21 @@
 		0D5EA9712003684A00855D36 /* CICategoryDistortionEffect */ = {
 			isa = PBXGroup;
 			children = (
-				0D5EA9722003696700855D36 /* CIBumpDistortion.swift */,
-				0D5EA9742003697600855D36 /* CIBumpDistortionLinear.swift */,
-				0D5EA9762003698300855D36 /* CICircleSplashDistortion.swift */,
-				0D5EA9782003699000855D36 /* CICircularWrap.swift */,
 				0D5EA97A2003699C00855D36 /* CIDroste.swift */,
-				0D5EA97C200369A700855D36 /* CIDisplacementDistortion.swift */,
-				0D5EA97E200369B300855D36 /* CIGlassDistortion.swift */,
+				0D5EA984200369D500855D36 /* CILightTunnel.swift */,
+				0D5EA988200369EC00855D36 /* CIStretchCrop.swift */,
+				0D5EA9782003699000855D36 /* CICircularWrap.swift */,
 				0D5EA980200369BE00855D36 /* CIGlassLozenge.swift */,
 				0D5EA982200369CA00855D36 /* CIHoleDistortion.swift */,
-				0D5EA984200369D500855D36 /* CILightTunnel.swift */,
-				0D5EA986200369E000855D36 /* CIPinchDistortion.swift */,
-				0D5EA988200369EC00855D36 /* CIStretchCrop.swift */,
-				0D5EA98A200369F700855D36 /* CITorusLensDistortion.swift */,
 				0D5EA98C20036A0200855D36 /* CITwirlDistortion.swift */,
+				0D5EA986200369E000855D36 /* CIPinchDistortion.swift */,
+				0D5EA97E200369B300855D36 /* CIGlassDistortion.swift */,
+				0D5EA9722003696700855D36 /* CIBumpDistortion.swift */,
 				0D5EA98E20036A0E00855D36 /* CIVortexDistortion.swift */,
+				0D5EA98A200369F700855D36 /* CITorusLensDistortion.swift */,
+				0D5EA9742003697600855D36 /* CIBumpDistortionLinear.swift */,
+				0D5EA9762003698300855D36 /* CICircleSplashDistortion.swift */,
+				0D5EA97C200369A700855D36 /* CIDisplacementDistortion.swift */,
 			);
 			name = CICategoryDistortionEffect;
 			sourceTree = "<group>";
@@ -322,6 +326,8 @@
 		D93544C31F6FA252006C5496 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				0DB2C75E2061FC9300994162 /* UIViewExt.swift */,
+				0DB2C75C2061FBEE00994162 /* UILabelExt.swift */,
 				D93544C71F6FB8FC006C5496 /* UIImageExt.swift */,
 			);
 			name = Extension;
@@ -559,6 +565,8 @@
 				0DF2E1AE1FF4D1AB008E68E8 /* CIExclusionBlendMode.swift in Sources */,
 				0D5EA98D20036A0200855D36 /* CITwirlDistortion.swift in Sources */,
 				0D728D471FF36BA600C00B47 /* CIColorMonochrome.swift in Sources */,
+				0DB2C75F2061FC9300994162 /* UIViewExt.swift in Sources */,
+				0DB2C75D2061FBEE00994162 /* UILabelExt.swift in Sources */,
 				0D728D5D1FF36C4E00C00B47 /* CIPhotoEffectProcess.swift in Sources */,
 				0D728D651FF36C7D00C00B47 /* CIVignette.swift in Sources */,
 				0D728D431FF36B8700C00B47 /* CIColorInvert.swift in Sources */,
@@ -733,6 +741,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 25AP33B4X5;
 				INFOPLIST_FILE = Filters/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cyd.CCFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -750,6 +759,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 25AP33B4X5;
 				INFOPLIST_FILE = Filters/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cyd.CCFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";

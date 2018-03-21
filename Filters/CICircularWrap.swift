@@ -13,7 +13,7 @@ class CICircularWrap: BaseFilter {
     private var imageView: UIImageView!
     private let image = UIImage("ImageS")
     private let name = "CICircularWrap"
-    private var radius = NSNumber(value: 40.0)
+    private var radius = NSNumber(value: 27.0)
     private var angle = NSNumber(value: 0.00)
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class CICircularWrap: BaseFilter {
     }
 
     private func setupViews() {
-        let slider = SliderView(title: "Radius", min: 0, max: 600, value: 40.0)
+        let slider = SliderView(title: "Radius", min: 0, max: 600, value: 27.0)
         slider.delegate = self
         slider.slider.tag = 100
         slider.frame.origin.y = 320

@@ -15,8 +15,7 @@
 
 @implementation UIImage (ColorLUT)
 
-+ (UIImage *)colorCubeInput:(NSString *)ipt color:(NSString *)color dimension:(NSInteger)n
-{
++ (UIImage *)colorCubeInput:(NSString *)ipt color:(NSString *)color dimension:(NSInteger)n{
     return [self colorCubeInput:ipt color:color space:nil dimension:n];
 }
 
@@ -89,8 +88,7 @@
     return [UIImage imageWithCGImage:[context createCGImage:outputImage fromRect:outputImage.extent]];
 }
 
-+ (unsigned char *)createRGBABitmapFromImage:(CGImageRef)image
-{
++ (unsigned char *)createRGBABitmapFromImage:(CGImageRef)image{
     CGContextRef context = NULL;
     CGColorSpaceRef colorSpace;
     unsigned char *bitmap;

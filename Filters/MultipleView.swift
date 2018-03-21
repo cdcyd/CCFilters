@@ -29,18 +29,21 @@ class MultipleView: UIView {
 
         let tf = UITextField()
         tf.font = UIFont.systemFont(ofSize: 14)
-        tf.leftViewMode = .always
-        tf.leftView = self.leftView(title: " " + title + ": ")
         tf.text = (ps as NSArray).componentsJoined(by: ",")
         tf.frame = CGRect(x: 5, y: 0, width: 300, height: tf.font!.lineHeight)
+        tf.leftView = UILabel(text: " " + title + ": ")
         tf.borderStyle = .roundedRect
-        tf.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
+        tf.leftViewMode = .always
         tf.keyboardType = .numbersAndPunctuation
+        tf.addTarget(self, action: #selector(textDidChanged(_:)), for: .editingChanged)
         self.addSubview(tf)
 
         self.frame = CGRect(x: 0, y: 250, width: tf.frame.maxX + 4, height: tf.font!.lineHeight)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChanged(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillChanged(_:)),
+                                               name: NSNotification.Name.UIKeyboardWillChangeFrame,
+                                               object: nil)
     }
 
     @objc private func textDidChanged(_ tf: UITextField) {
@@ -49,10 +52,7 @@ class MultipleView: UIView {
         }
 
         var values = [CGFloat]()
-        for text in texts {
-            if Float(text) == nil {
-                continue
-            }
+        for text in texts where Float(text) != nil {
             values.append(CGFloat(Float(text)!))
         }
 
@@ -61,9 +61,7 @@ class MultipleView: UIView {
         }
 
         let result = UnsafeMutableBufferPointer<CGFloat>(start: &values, count: values.count)
-
         let vector = CIVector(values: result.baseAddress!, count: values.count)
-
         delegate?.didChangedValue(view: self, vector: vector)
     }
 
@@ -90,30 +88,11 @@ class MultipleView: UIView {
         }
     }
 
-    private func viewController() -> UIViewController? {
-        if self.next != nil && self.next!.isKind(of: UIViewController.self) {
-            return self.next as? UIViewController
-        }
-        var superview = self.superview
-        while superview != nil {
-            if superview!.next != nil && superview!.next!.isKind(of: UIViewController.self) {
-                return superview!.next as? UIViewController
-            }
-            superview = superview?.superview
-        }
-        return nil
-    }
-
-    private func leftView(title: String) -> UILabel {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.text = title
-        label.sizeToFit()
-        return label
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
